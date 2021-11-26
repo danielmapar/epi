@@ -1,7 +1,19 @@
 #include "test_framework/generic_test.h"
 long long SwapBits(long long x, int i, int j) {
-  // TODO - you fill in here.
-  return 0;
+
+  // x = 64 bits
+  // x = 00001001
+
+  // Extract the bit
+  long long iBit = (x >> i) & 1UL;
+  long long jBit = (x >> j) & 1UL;
+  
+  if (iBit == jBit) return x;
+
+  long long iInt = 1UL << j;
+  long long jInt = 1UL << i;
+
+  return x ^ (iInt | jInt);
 }
 
 int main(int argc, char* argv[]) {
