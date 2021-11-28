@@ -25,8 +25,7 @@ unsigned long long ClosestIntSameBitCount(unsigned long long x) {
         break;
       }
       zeroIndex = index;
-    }
-    if (bit == 1) {
+    } else { // bit = 1
       if (zeroIndex > -1) {
         mask <<= zeroIndex;
         break;
