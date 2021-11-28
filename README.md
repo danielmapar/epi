@@ -9,5 +9,3 @@ operator	asm equivalent	description
 * `~`	NOT	Unary complement (bit inversion)
 * `<<`	SHL	Shift bits left
 * `>>`	SHR	Shift bits right
-
-
