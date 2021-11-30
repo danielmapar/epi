@@ -1,7 +1,20 @@
 #include "test_framework/generic_test.h"
 int Divide(int x, int y) {
-  // TODO - you fill in here.
-  return 0;
+  
+  // x = 64 
+  // y = 2 
+  // quotient = 32
+  // The number of subtractions is the quotient 
+
+  // O(size of number)
+  // Example: x = 99999999 and y = 1, that means we will run this loop
+  // 99999999 times
+  unsigned long long quotient = 0;
+  while (x >= y) {
+    x -= y;
+    quotient++;
+  }
+  return quotient;
 }
 
 int main(int argc, char* argv[]) {
