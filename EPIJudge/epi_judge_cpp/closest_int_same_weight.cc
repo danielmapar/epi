@@ -18,7 +18,7 @@ unsigned long long ClosestIntSameBitCount(unsigned long long x) {
   short bitStreamSize = CHAR_BIT * sizeof(unsigned long long);
 
   for (short index = 0; index < bitStreamSize; index++) {
-    bool bit = (x>>index) & 1UL;
+    bool bit = (x>>index) & 1UL; // get right most bit
     if (bit == 0) {
       if (oneIndex > -1) {
         mask <<= oneIndex;
