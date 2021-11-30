@@ -1,8 +1,8 @@
-# Elements of Programming Interviews in C++ - Notes
+# Elements of Programming Interviews in C++
 
-## Bitwise questions
+## Bitwise 
 
-### Primitive Types
+### Notes
 
 operator	asm equivalent	description
 * `&`	AND	Bitwise AND
@@ -11,6 +11,8 @@ operator	asm equivalent	description
 * `~`	NOT	Unary complement (bit inversion)
 * `<<`	SHL	Shift bits left
 * `>>`	SHR	Shift bits right
+
+### Questions
 
 * Question: `count_bits.cc`
     * Use of `&` operand and `00000001` to isolate the right most bit of a number.
