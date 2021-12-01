@@ -44,3 +44,9 @@ operator	asm equivalent	description
 
 * Question: `power_x_y.cc`
     * We can use the same strategy as the divide problem. `pow(m, n)` can be found by doing `result = ((m * m) * m) * m` about `n` times. If the exponential is negative remember to `1 / result`
+
+* Question: `reverse_digits.cc`
+    * In order to reverse a number (int) we can use `%` to extract the right most digit. Additionally we can do `* 10` to keep increasing your reversed number.
+
+* Question: `is_number_palindrome.cc`
+    * This question is similar to `reverse_digits.cc`. We can use the same logic to reverse the number and check if it is equal to the original one.
