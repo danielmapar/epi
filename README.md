@@ -50,3 +50,6 @@ operator	asm equivalent	description
 
 * Question: `is_number_palindrome.cc`
     * This question is similar to `reverse_digits.cc`. We can use the same logic to reverse the number and check if it is equal to the original one.
+
+* Question: `uniform_random_number.cc`
+    * We can use the `<<` operator and the randomization function to create unique numbers. On that note, we can limit the size of the number based on the number of possibilities (lower bound - great bound).
