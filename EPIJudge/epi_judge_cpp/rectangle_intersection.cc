@@ -8,7 +8,37 @@ struct Rect {
 };
 
 Rect IntersectRectangle(const Rect& r1, const Rect& r2) {
-  // TODO - you fill in here.
+
+  std::vector<std::vector<int>> points1{
+      {r1.x, r1.y}, // top-left
+      {r1.x+r1.width, r1.y}, // top-right
+      {r1.x, r1.y+r1.height}, // bottom-left
+      {r1.x+r1.width, r1.y+r1.height} // bottom-right
+  };
+
+  std::vector<std::vector<int>> points2{
+      {r2.x, r2.y},
+      {r2.x+r2.width, r2.y},
+      {r2.x, r2.y+r2.height}
+  };
+
+  for (std::vector<int> point : points1) {
+    int p1x = point[0];
+    int p1y = point[1];
+    
+    
+    if (p1x > points2[0][0] && p1x < points2[1][0] && 
+        p1y > points2[0][1] && p1y < points2[2][1]) {
+          std::cout << "Intersect!" << std::endl;
+
+        }
+  }
+
+  std::cout << "oi!" << std::endl;
+
+
+
+  // TODO - you fill in here. 
   return {0, 0, 0, 0};
 }
 bool operator==(const Rect& r1, const Rect& r2) {
