@@ -53,3 +53,6 @@ operator	asm equivalent	description
 
 * Question: `uniform_random_number.cc`
     * We can use the `<<` operator and the randomization function to create unique numbers. On that note, we can limit the size of the number based on the number of possibilities (lower bound - great bound).
+
+* Question: `rectangle_intersection.cc`
+    * No need to use bitwise operators to solve this problem. Basically we start checking if the rectangles intersect, after that we can calculate the size of the new intersection rectangle.

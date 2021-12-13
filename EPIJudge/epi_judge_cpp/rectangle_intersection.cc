@@ -7,39 +7,18 @@ struct Rect {
   int x, y, width, height;
 };
 
+bool isIntersect(const Rect& r1, const Rect& r2) {
+  return r1.x <= r2.x + r2.width && r1.x + r1.width >= r2.x &&
+         r1.y <= r2.y + r2.height && r1.y + r1.height >= r2.y;
+}
+
 Rect IntersectRectangle(const Rect& r1, const Rect& r2) {
-
-  std::vector<std::vector<int>> points1{
-      {r1.x, r1.y}, // top-left
-      {r1.x+r1.width, r1.y}, // top-right
-      {r1.x, r1.y+r1.height}, // bottom-left
-      {r1.x+r1.width, r1.y+r1.height} // bottom-right
-  };
-
-  std::vector<std::vector<int>> points2{
-      {r2.x, r2.y},
-      {r2.x+r2.width, r2.y},
-      {r2.x, r2.y+r2.height}
-  };
-
-  for (std::vector<int> point : points1) {
-    int p1x = point[0];
-    int p1y = point[1];
-    
-    
-    if (p1x > points2[0][0] && p1x < points2[1][0] && 
-        p1y > points2[0][1] && p1y < points2[2][1]) {
-          std::cout << "Intersect!" << std::endl;
-
-        }
-  }
-
-  std::cout << "oi!" << std::endl;
-
-
-
-  // TODO - you fill in here. 
-  return {0, 0, 0, 0};
+ if (!isIntersect(r1, r2)) {
+   return {0, 0, -1, -1};
+ } 
+ return {std::max(r1.x, r2.x), std::max(r1.y, r2.y), 
+         std::min(r1.x + r1.width, r2.x + r2.width) - std::max(r1.x, r2.x),
+         std::min(r1.y + r1.height, r2.y + r2.height) - std::max(r1.y, r2.y)};
 }
 bool operator==(const Rect& r1, const Rect& r2) {
   return std::tie(r1.x, r1.y, r1.width, r1.height) ==
